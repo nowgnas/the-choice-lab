@@ -20,14 +20,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body className={`${inter.className} bg-dark text-white min-h-screen`}>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-EZ5B8G3D3X" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">{`
+      <head>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-EZ5B8G3D3X" strategy="beforeInteractive" />
+        <Script id="google-analytics" strategy="beforeInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-EZ5B8G3D3X');
         `}</Script>
+      </head>
+      <body className={`${inter.className} bg-dark text-white min-h-screen`}>
         <Providers>{children}</Providers>
       </body>
     </html>
