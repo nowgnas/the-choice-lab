@@ -74,6 +74,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2114994662223496"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-EZ5B8G3D3X" strategy="beforeInteractive" />
         <Script id="google-analytics" strategy="beforeInteractive">{`
           window.dataLayer = window.dataLayer || [];
